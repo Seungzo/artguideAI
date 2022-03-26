@@ -3,18 +3,12 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-<<<<<<< HEAD
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-=======
-import {FontAwesome} from '@expo/vector-icons';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
->>>>>>> 3013c9f (1번)
 import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
-<<<<<<< HEAD
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
@@ -26,30 +20,12 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import TabThreeScreen from "../screens/TabThreeScreen";
-=======
-} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import * as React from 'react';
-import {ColorSchemeName, Pressable} from 'react-native';
-
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
->>>>>>> 3013c9f (1번)
 import {
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
-<<<<<<< HEAD
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
-=======
-} from '../types';
-import LinkingConfiguration from './LinkingConfiguration';
->>>>>>> 3013c9f (1번)
 
 export default function Navigation({
   colorScheme,
@@ -74,26 +50,9 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-<<<<<<< HEAD
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} />
-=======
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="NotFound"
-        component={NotFoundScreen}
-        options={{title: 'Oops!'}}
-      />
-      <Stack.Group screenOptions={{presentation: 'modal'}}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
->>>>>>> 3013c9f (1번)
     </Stack.Navigator>
   );
 }
@@ -117,37 +76,16 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabOne"
         component={TabOneScreen}
-<<<<<<< HEAD
         options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
           title: "추천",
           headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="random" color={color} />,
-=======
-        options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({pressed}) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{marginRight: 15}}
-              />
-            </Pressable>
-          ),
->>>>>>> 3013c9f (1번)
         })}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
-<<<<<<< HEAD
           title: "작품검색",
           headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
@@ -162,10 +100,6 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="compass" color={color} />
           ),
-=======
-          title: 'Tab Two',
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
->>>>>>> 3013c9f (1번)
         }}
       />
     </BottomTab.Navigator>
@@ -179,5 +113,5 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
 }) {
-  return <FontAwesome size={30} style={{marginBottom: -3}} {...props} />;
+  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
